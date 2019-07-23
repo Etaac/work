@@ -2,15 +2,17 @@ import random
 
 
 def ChechA(num, ans):
+    # 判斷A的個數
     a = 0
-    for i in range(-3, 1):
+    for i in range(0, 4):
         for j in range(1, 4):
-            if num[i] == int(ans[i+j]):
+            if num[i] == int(ans[i - j]):
                 a += 1
     return a
 
 
 def CheckB(num, ans):
+    # 判斷B的個數
     b = 0
     for i in range(4):
         if num[i] == int(ans[i]):
@@ -27,8 +29,9 @@ def ChechValid(num):
 
 
 b = 0
-value = [i for i in range(0,10)]
+value = [i for i in range(0, 10)]
 num = []
+# 生成四個不一樣的數字
 for i in range(4):
     num.append(random.choice(value))
     value.remove(num[i])
@@ -44,4 +47,5 @@ while b != 4:
     a = ChechA(num, ans)
     b = CheckB(num, ans)
     print(a, 'A', b, 'B')
+
 print('正確答案')
