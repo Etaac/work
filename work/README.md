@@ -10,7 +10,7 @@
 
 ## Code 邏輯
 
-###CheckA
+### CheckA
     目的是為了判斷有幾個A
 ```python
 def ChechA(num, ans):
@@ -23,7 +23,7 @@ def ChechA(num, ans):
     return a
 ```
 
-###CheckB
+### CheckB
     目的為判斷有幾個B
 ```python
 def CheckB(num, ans):
@@ -35,7 +35,7 @@ def CheckB(num, ans):
     return b
 ```
 
-###CheckValid
+### CheckValid
 目的是判斷使用者有沒有輸入錯誤的數字，如重複數字或是字數不對等
 ```python
 def ChechValid(num):
