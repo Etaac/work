@@ -9,15 +9,15 @@
     此為不重複數字版
 
     在輸入介面輸入數字，要是格式錯誤，如字數少於或多於4、重複數字等會顯示錯誤
-    如果輸入正確，在輸入的數字中有出現正確答案但位置卻不對的話，會被分類為A，若位置正確則會是B
-![GITHUB](結果.png "結果") 
+    如果輸入正確，在輸入的數字中有出現正確答案但位置卻不對的話，會被分類為B，若位置正確則會是A
+![GITHUB](結果.png "結果")
 
 
 ## 程式邏輯
 
 ### 整體邏輯
 隨機從0-9中挑選數字，再把挑選出來的數字從原本的list中移除，重複四次後開始讓使用者
-輸入答案，要是答案的格式正確的話就開始判斷A、B的數量，之後顯示AB數量，如果B為四個
+輸入答案，要是答案的格式正確的話就開始判斷A、B的數量，之後顯示AB數量，如果A為四個
 的話就代表全部猜對，即結束遊戲，反之繼續猜數字。
 
 ### CheckA
@@ -26,10 +26,9 @@
 def ChechA(num, ans):
     # 判斷A的個數
     a = 0
-    for i in range(0, 4):
-        for j in range(1, 4):
-            if num[i] == int(ans[i - j]):
-                a += 1
+    for i in range(4):
+        if num[i] == int(ans[i]):
+            a += 1
     return a
 ```
 
@@ -39,9 +38,10 @@ def ChechA(num, ans):
 def CheckB(num, ans):
     # 判斷B的個數
     b = 0
-    for i in range(4):
-        if num[i] == int(ans[i]):
-            b += 1
+    for i in range(0, 4):
+        for j in range(1, 4):
+            if num[i] == int(ans[i - j]):
+                b += 1
     return b
 ```
 
